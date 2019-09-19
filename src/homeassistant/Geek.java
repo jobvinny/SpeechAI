@@ -21,7 +21,6 @@ import javax.speech.synthesis.SynthesizerModeDesc;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-import sun.applet.Main;
 
 
 /**
@@ -33,9 +32,9 @@ public class Geek {
     JTextField text;
     //input file code
     private Object Charsets;
-    URL url = Main.class.getResource("/corpus/5096.dic");
-    URL url2 = Main.class.getResource("/corpus/5096.lm");
-    URL url3 = Main.class.getResource("/music/best.MP3");
+    URL url = getClass().getResource("/corpus/5096.dic");
+    URL url2 = getClass().getResource("/corpus/5096.lm");
+    URL url3 = getClass().getResource("/music/best.MP3");
     //File musicfile = new File(url3.getFile());
     //end of input file
 
@@ -52,10 +51,10 @@ public class Geek {
     public void setSpeech(String sp) {
         this.sp = sp;
     }
-//end of getter methods
+    //end of getter methods
 
-    public void micspeech() throws IOException {
-        //actiavtion voice
+    void micSpeech() throws IOException {
+        //activation voice
         try {
             System.setProperty("freetts.voices",
                     "com.sun.speech.freetts.en.us.cmu_us_kal.KevinVoiceDirectory");
@@ -160,13 +159,13 @@ public class Geek {
                             = Central.createSynthesizer(new SynthesizerModeDesc(Locale.US));
                     synthesizer.allocate();
                     synthesizer.resume();
-                    synthesizer.speakPlainText("I am under Development by the Techno Science Club Developers", null);
+                    synthesizer.speakPlainText("I am under Development by the TechGuy", null);
                     synthesizer.waitEngineState(Synthesizer.QUEUE_EMPTY);
                     synthesizer.allocate();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            } else if (command.equalsIgnoreCase("What is my best SuperCar") || command.equalsIgnoreCase("What is the est SuperCar")) {
+            } else if (command.equalsIgnoreCase("What is my best SuperCar") || command.equalsIgnoreCase("What is the best SuperCar")) {
 
                 try {
                     System.setProperty("freetts.voices",
@@ -193,7 +192,7 @@ public class Geek {
                     synthesizer.resume();
                     synthesizer.speakPlainText("Yes", null);
                     synthesizer.speakPlainText("Am listening", null);
-                    synthesizer.speakPlainText("How can i help you", null);
+                    synthesizer.speakPlainText("How may i help you", null);
                     synthesizer.waitEngineState(Synthesizer.QUEUE_EMPTY);
                     synthesizer.allocate();
                 } catch (Exception e) {

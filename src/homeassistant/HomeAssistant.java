@@ -1,21 +1,16 @@
 package homeassistant;
 
-import sun.applet.Main;
-
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.IOException;
-import java.net.URL;
-import java.time.format.DateTimeFormatter;
-import java.util.Locale;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.speech.Central;
 import javax.speech.synthesis.Synthesizer;
 import javax.speech.synthesis.SynthesizerModeDesc;
+import javax.swing.*;
 import javax.swing.border.TitledBorder;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.net.URL;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
 
 /**
@@ -34,11 +29,11 @@ public class HomeAssistant {
 
     JFrame frame;
     //
-    URL url = Main.class.getResource("/resources/mic3.png");
-    URL url2 = Main.class.getResource("/resources/inbox1.png");
-    URL url3 = Main.class.getResource("/resources/mic2.jpeg");
-    URL url4 = Main.class.getResource("/resources/info.png");
-    URL url5 = Main.class.getResource("/resources/out.png");
+    URL url = getClass().getResource("/resources/mic3.png");
+    URL url2 = getClass().getResource("/resources/inbox1.png");
+    URL url3 = getClass().getResource("/resources/mic2.jpeg");
+    URL url4 = getClass().getResource("/resources/info.png");
+    URL url5 = getClass().getResource("/resources/out.png");
     ImageIcon icon = new ImageIcon(url);
     ImageIcon image2 = new ImageIcon(url2);
     ImageIcon image3 = new ImageIcon(url3);
@@ -49,7 +44,7 @@ public class HomeAssistant {
     Image iconimage = new ImageIcon(url).getImage();
 
     //end of frames
-    void HomeAssistant() {
+    void homeAssistant() {
 
         detect = new JLabel(image2);
         bar = new JProgressBar();
@@ -254,8 +249,8 @@ public class HomeAssistant {
     }
 
 //    public static void main(String[] args) throws IOException {
-//        HomeAssistant home = new HomeAssistant();
-//        home.HomeAssistant();
+//        homeAssistant home = new homeAssistant();
+//        home.homeAssistant();
 //
 //    }
 
